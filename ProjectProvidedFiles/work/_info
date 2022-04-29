@@ -1,0 +1,585 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/ProgramData/App-V/2191B702-5279-4048-91BA-BCF8F2A20B49/3C5B5D32-C303-48A2-8738-F357EDE80167/Root/examples
+T_opt
+!s110 1651250767
+VWVh7dU?e?E@V24i?b0Slh1
+04 8 4 work eBike_tb fast 0
+=2-6c2b59d17b82-626c164e-119-1d78
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+OE;O;10.3c;59
+vA2D_intf
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 !s110 1651250753
+!i10b 1
+!s100 aZ_NfGgXi2LWkbRWzE5nm3
+ID3J1P3MTN>B]mQLQiCMF?3
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 A2D_intf_sv_unit
+S1
+Z3 dI:/ECE551/ProjectProvidedFiles
+w1651076884
+8I:/ECE551/ProjectProvidedFiles/A2D_intf.sv
+FI:/ECE551/ProjectProvidedFiles/A2D_intf.sv
+L0 1
+Z4 OE;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1651250753.280000
+!s107 I:/ECE551/ProjectProvidedFiles/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/A2D_intf.sv|
+!i113 0
+Z5 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a2@d_intf
+vAnalogModel
+R0
+Z6 !s110 1651250749
+!i10b 1
+!s100 alcY6>kQ7:ZDeNaRAD^3E3
+IXPU^AGU2U7OelzYkK@d681
+R2
+!s105 AnalogModel_sv_unit
+S1
+R3
+w1649791202
+8I:/ECE551/ProjectProvidedFiles/AnalogModel.sv
+FI:/ECE551/ProjectProvidedFiles/AnalogModel.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250749.760000
+!s107 I:/ECE551/ProjectProvidedFiles/AnalogModel.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/AnalogModel.sv|
+!i113 0
+R5
+n@analog@model
+vbrushless
+R0
+Z7 !s110 1651250757
+!i10b 1
+!s100 >]QH_f=QFlGgd;R58:@m12
+I?c^5Qcjj28c0f2UeTzZMo0
+R2
+!s105 brushless_sv_unit
+S1
+R3
+w1651077957
+8I:/ECE551/ProjectProvidedFiles/brushless.sv
+FI:/ECE551/ProjectProvidedFiles/brushless.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250757.260000
+!s107 I:/ECE551/ProjectProvidedFiles/brushless.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/brushless.sv|
+!i113 0
+R5
+vcadence_filt
+R0
+Z8 !s110 1651250756
+!i10b 1
+!s100 [TLVYfezl[J89WnePmFZE1
+I0oG:KX1jag5@9@H^B]EKb0
+R2
+!s105 cadence_filt_sv_unit
+S1
+R3
+Z9 w1650240446
+8I:/ECE551/ProjectProvidedFiles/cadence_filt.sv
+FI:/ECE551/ProjectProvidedFiles/cadence_filt.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250756.020000
+!s107 I:/ECE551/ProjectProvidedFiles/cadence_filt.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/cadence_filt.sv|
+!i113 0
+R5
+vcadence_LU
+R0
+Z10 !s110 1651250754
+!i10b 1
+!s100 `9zdfR8ob91U:9jOjzCFf0
+ICN;lU?Y<TgaBFgK]_LcRC2
+R2
+!s105 cadence_LU_sv_unit
+S1
+R3
+R9
+8I:/ECE551/ProjectProvidedFiles/cadence_LU.sv
+FI:/ECE551/ProjectProvidedFiles/cadence_LU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250754.440000
+!s107 I:/ECE551/ProjectProvidedFiles/cadence_LU.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/cadence_LU.sv|
+!i113 0
+R5
+ncadence_@l@u
+vcadence_meas
+R0
+Z11 !s110 1651250755
+!i10b 1
+!s100 39nKac5Rez@Oom:;I6Hc_2
+I]Xm7Ug[AQ:mc>kdl0i3RY0
+R2
+!s105 cadence_meas_sv_unit
+S1
+R3
+w1650300638
+8I:/ECE551/ProjectProvidedFiles/cadence_meas.sv
+FI:/ECE551/ProjectProvidedFiles/cadence_meas.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250754.860000
+!s107 I:/ECE551/ProjectProvidedFiles/cadence_meas.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/cadence_meas.sv|
+!i113 0
+R5
+vdesiredDrive
+R0
+R11
+!i10b 1
+!s100 dk40MWe4<mkPz4REUlkaZ3
+IkOV`HoQ<c;N344`G8:Y:k2
+R2
+!s105 desiredDrive_sv_unit
+S1
+R3
+R9
+8I:/ECE551/ProjectProvidedFiles/desiredDrive.sv
+FI:/ECE551/ProjectProvidedFiles/desiredDrive.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250755.240000
+!s107 I:/ECE551/ProjectProvidedFiles/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/desiredDrive.sv|
+!i113 0
+R5
+ndesired@drive
+veBike
+R0
+Z12 !s110 1651250750
+!i10b 1
+!s100 NWD[1DYD9OnVank;e2:AL1
+IR6bJ;ef=0X51N9_fYH;mR3
+R2
+!s105 eBike_sv_unit
+S1
+R3
+w1651250150
+8I:/ECE551/ProjectProvidedFiles/eBike.sv
+FI:/ECE551/ProjectProvidedFiles/eBike.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250750.130000
+!s107 I:/ECE551/ProjectProvidedFiles/eBike.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/eBike.sv|
+!i113 0
+R5
+ne@bike
+veBike_tb
+R0
+R12
+!i10b 1
+!s100 I6iVW]o@`N<`BO?ARA6:63
+Imh`Ro6_FF=3:JCI^L;<k@2
+R2
+!s105 eBike_tb_sv_unit
+S1
+R3
+w1651250739
+8I:/ECE551/ProjectProvidedFiles/eBike_tb.sv
+FI:/ECE551/ProjectProvidedFiles/eBike_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250750.540000
+!s107 I:/ECE551/ProjectProvidedFiles/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/eBike_tb.sv|
+!i113 0
+R5
+ne@bike_tb
+veBikePhysics
+R0
+Z13 !s110 1651250751
+!i10b 1
+!s100 T;=fZ`;4@ADa2eK_fVQlo0
+IZmNY_JQUA1UWPRX=?>93Z1
+R2
+!s105 eBikePhysics_sv_unit
+S1
+R3
+w1649791238
+8I:/ECE551/ProjectProvidedFiles/eBikePhysics.sv
+FI:/ECE551/ProjectProvidedFiles/eBikePhysics.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250750.980000
+!s107 I:/ECE551/ProjectProvidedFiles/eBikePhysics.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/eBikePhysics.sv|
+!i113 0
+R5
+ne@bike@physics
+vinert_intf
+R0
+Z14 !s110 1651250758
+!i10b 1
+!s100 =eF`Di1WJMlcZ5k@8FcDU2
+IH>5mZDTDE[lN`k7]6nMiD1
+R2
+!s105 inert_intf_sv_unit
+S1
+R3
+w1650470418
+8I:/ECE551/ProjectProvidedFiles/inert_intf.sv
+FI:/ECE551/ProjectProvidedFiles/inert_intf.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250758.442000
+!s107 I:/ECE551/ProjectProvidedFiles/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/inert_intf.sv|
+!i113 0
+R5
+vinertial_integrator
+R0
+!s110 1651250759
+!i10b 1
+!s100 HKm]1Qa?YMYJZPE8emIAn3
+Iac5CPloF>Q6n53=A`O1MU2
+R2
+!s105 inertial_integrator_sv_unit
+S1
+R3
+w1650470420
+8I:/ECE551/ProjectProvidedFiles/inertial_integrator.sv
+FI:/ECE551/ProjectProvidedFiles/inertial_integrator.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250758.822000
+!s107 I:/ECE551/ProjectProvidedFiles/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/inertial_integrator.sv|
+!i113 0
+R5
+vmtr_drv
+R0
+R7
+!i10b 1
+!s100 5QcUGVLJHz=HUbh>J30l63
+I2TcezIXDac?geoN8DLJ;53
+R2
+!s105 mtr_drv_sv_unit
+S1
+R3
+w1651077960
+8I:/ECE551/ProjectProvidedFiles/mtr_drv.sv
+FI:/ECE551/ProjectProvidedFiles/mtr_drv.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250756.890000
+!s107 I:/ECE551/ProjectProvidedFiles/mtr_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/mtr_drv.sv|
+!i113 0
+R5
+vnonoverlap
+R0
+R7
+!i10b 1
+!s100 5U<0K@`=JlVg<3KjQeeXC2
+IDemU7GPJ4]2OY:Oz3MHob0
+R2
+!s105 nonoverlap_sv_unit
+S1
+R3
+w1651078047
+8I:/ECE551/ProjectProvidedFiles/nonoverlap.sv
+FI:/ECE551/ProjectProvidedFiles/nonoverlap.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250757.660000
+!s107 I:/ECE551/ProjectProvidedFiles/nonoverlap.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/nonoverlap.sv|
+!i113 0
+R5
+vPB_intf
+R0
+Z15 !s110 1651250752
+!i10b 1
+!s100 6HMC9D_LH<YzdVGg8`VEa2
+IeiIU]33@RhSYoC:]:1=Gh2
+R2
+!s105 PB_intf_sv_unit
+S1
+R3
+w1651250231
+8I:/ECE551/ProjectProvidedFiles/PB_intf.sv
+FI:/ECE551/ProjectProvidedFiles/PB_intf.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250752.490000
+!s107 I:/ECE551/ProjectProvidedFiles/PB_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/PB_intf.sv|
+!i113 0
+R5
+n@p@b_intf
+vPID
+R0
+R8
+!i10b 1
+!s100 [z_6aK27Ni<Ge<mODil6`1
+ISZecG9n9j6Zf`K4R^_Uk01
+R2
+!s105 PID_sv_unit
+S1
+R3
+w1651077757
+8I:/ECE551/ProjectProvidedFiles/PID.sv
+FI:/ECE551/ProjectProvidedFiles/PID.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250756.410000
+!s107 I:/ECE551/ProjectProvidedFiles/PID.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/PID.sv|
+!i113 0
+R5
+n@p@i@d
+vPWM
+R0
+R14
+!i10b 1
+!s100 TKe>5Yl]IlPZ`AUFo<_zB3
+IIllQT6EIkKLUzEzcRBR=i0
+R2
+!s105 PWM_sv_unit
+S1
+R3
+w1651078044
+8I:/ECE551/ProjectProvidedFiles/PWM.sv
+FI:/ECE551/ProjectProvidedFiles/PWM.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250758.052000
+!s107 I:/ECE551/ProjectProvidedFiles/PWM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/PWM.sv|
+!i113 0
+R5
+n@p@w@m
+vreset_synch
+R0
+R1
+!i10b 1
+!s100 8:e5EPIgm>ITf=_<7i7WC3
+Iei5OHQYZlzR0NQIo]@3U92
+R2
+!s105 reset_synch_sv_unit
+S1
+R3
+w1648224691
+8I:/ECE551/ProjectProvidedFiles/reset_synch.sv
+FI:/ECE551/ProjectProvidedFiles/reset_synch.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250752.880000
+!s107 I:/ECE551/ProjectProvidedFiles/reset_synch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/reset_synch.sv|
+!i113 0
+R5
+vsensorCondition
+R0
+R10
+!i10b 1
+!s100 D0FiWGU>Y@oREZ41<Q];S1
+IF8Ld1IO^R:a^lYW5YS>BW0
+R2
+!s105 sensorCondition_sv_unit
+S1
+R3
+w1651077297
+8I:/ECE551/ProjectProvidedFiles/sensorCondition.sv
+FI:/ECE551/ProjectProvidedFiles/sensorCondition.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250754.050000
+!s107 I:/ECE551/ProjectProvidedFiles/sensorCondition.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/sensorCondition.sv|
+!i113 0
+R5
+nsensor@condition
+vSPI_ADC128S
+R0
+R13
+!i10b 1
+!s100 FMj[4W2=9oUfTJcKEmN2N0
+IY2e8oMCeCRTh?nJSePMMA2
+R2
+!s105 SPI_ADC128S_sv_unit
+S1
+R3
+w1649791252
+8I:/ECE551/ProjectProvidedFiles/SPI_ADC128S.sv
+FI:/ECE551/ProjectProvidedFiles/SPI_ADC128S.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250751.680000
+!s107 I:/ECE551/ProjectProvidedFiles/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/SPI_ADC128S.sv|
+!i113 0
+R5
+n@s@p@i_@a@d@c128@s
+vSPI_mnrch
+R0
+R1
+!i10b 1
+!s100 Mf1AXVahjB]:[VG3UmDHT2
+IQD<Oc>U497njLM6:c@PM72
+R2
+!s105 SPI_mnrch_sv_unit
+S1
+R3
+w1651077199
+8I:/ECE551/ProjectProvidedFiles/SPI_mnrch.sv
+FI:/ECE551/ProjectProvidedFiles/SPI_mnrch.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250753.660000
+!s107 I:/ECE551/ProjectProvidedFiles/SPI_mnrch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/SPI_mnrch.sv|
+!i113 0
+R5
+n@s@p@i_mnrch
+vtelemetry
+R0
+R11
+!i10b 1
+!s100 AblaJ<<];oC>Bf0UN`84A3
+I`b4kSBMV=YAf8<zYb@T^13
+R2
+!s105 telemetry_sv_unit
+S1
+R3
+R9
+8I:/ECE551/ProjectProvidedFiles/telemetry.sv
+FI:/ECE551/ProjectProvidedFiles/telemetry.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250755.640000
+!s107 I:/ECE551/ProjectProvidedFiles/telemetry.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/telemetry.sv|
+!i113 0
+R5
+vUART_rcv
+R0
+R15
+!i10b 1
+!s100 l4hg;1<DZdKhEEH70oTAc2
+I3MQBF_YHInL25fdjD@A3T3
+R2
+!s105 UART_rcv_sv_unit
+S1
+R3
+w1649791264
+8I:/ECE551/ProjectProvidedFiles/UART_rcv.sv
+FI:/ECE551/ProjectProvidedFiles/UART_rcv.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250752.090000
+!s107 I:/ECE551/ProjectProvidedFiles/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/UART_rcv.sv|
+!i113 0
+R5
+n@u@a@r@t_rcv
+vUART_tx
+R0
+R6
+!i10b 1
+!s100 ZRPC>[[NOMbkSFiQdOS0?0
+Im0afO07d>D_D@=_Qf[[mh0
+R2
+!s105 UART_tx_sv_unit
+S1
+R3
+w1649791274
+8I:/ECE551/ProjectProvidedFiles/UART_tx.sv
+FI:/ECE551/ProjectProvidedFiles/UART_tx.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1651250749.342000
+!s107 I:/ECE551/ProjectProvidedFiles/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/ProjectProvidedFiles/UART_tx.sv|
+!i113 0
+R5
+n@u@a@r@t_tx
