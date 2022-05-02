@@ -6,7 +6,7 @@ input logic MISO;
 output logic SS_n;
 output logic SCLK;
 output logic MOSI;
-output logic [12:0] incline;
+output logic signed [12:0] incline;
 output logic vld;
 logic [15:0] cmd;
 logic snd;

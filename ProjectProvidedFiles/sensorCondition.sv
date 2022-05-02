@@ -7,7 +7,7 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
   input [11:0] torque;
   input cadence_raw;
   input [11:0] curr;
-  input [12:0] incline;
+  input signed [12:0] incline;
   input [2:0] scale;
   input [11:0] batt;
   output signed [12:0] error;
