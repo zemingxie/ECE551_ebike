@@ -30,6 +30,7 @@ module eBike_tb();
   logic vld_TX;
   logic TX_RX;
   logic [7:0] rx_data;
+  logic change;
   
   //////////////////////////////////////////////////
   // Instantiate model of analog input circuitry //
@@ -74,8 +75,9 @@ module eBike_tb();
     cadence = 1'b0;
     YAW_RT = 16'h2000;
     BATT = 12'hb80;
-    BRAKE = 12'h0ff;
+    BRAKE = 12'hfff;
     tgglMd = 1'b0;
+	change = 1'b0;
     @(posedge clk);
     @(negedge clk) RST_n = 1;
 	repeat(1) @(posedge clk);
@@ -84,7 +86,13 @@ module eBike_tb();
 	repeat(3) @(posedge clk);
 	@(posedge clk) tgglMd = 1;
 	@(posedge clk) tgglMd = 0;
-    #50000000;
+	repeat(3) @(posedge clk);
+	@(posedge clk) tgglMd = 1;
+	@(posedge clk) tgglMd = 0;
+    #42000000;
+	change = 1'b1;
+	TORQUE = 12'h500;
+	#42000000;
     $stop();
 	
   end
@@ -99,7 +107,9 @@ module eBike_tb();
   // Block for cadence signal generation? //
   /////////////////////////////////////////
   always begin
-    #20000 cadence = ~cadence;			
+    if(!change) repeat(2200) @(posedge clk); 
+	else repeat(8192) @(posedge clk); 
+	cadence = ~cadence;		
   end
 	
 endmodule
