@@ -11,7 +11,7 @@ module PB_intf(clk, rst_n, tgglMd, setting, scale);
   assign scale = setting[1] ? (setting[0] ? 3'b111 : 3'b101) : (setting[0] ? 3'b011 : 3'b000);
 
   always_ff @(posedge clk, negedge rst_n)
-    if(!rst_n) setting <= 2'b00;
+    if(!rst_n) setting <= 2'b10;
     else if(rise_edge) setting <= setting + 1;
 
   always_ff @(posedge clk, negedge rst_n)
