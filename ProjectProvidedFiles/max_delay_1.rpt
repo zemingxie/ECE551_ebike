@@ -1,0 +1,98 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : eBike
+Version: S-2021.06
+Date   : Tue May  3 22:13:34 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: isensor/curr_accum_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: imtr_drv/iPWM/PWM_sig_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  isensor/curr_accum_reg[2]/CLK (DFFARX1_LVT)             0.00       0.00 r
+  isensor/curr_accum_reg[2]/QN (DFFARX1_LVT)              0.07       0.07 r
+  U4969/Y (OR3X1_LVT)                                     0.05       0.12 r
+  U5038/Y (AO22X1_LVT)                                    0.05       0.17 r
+  U5040/Y (NAND2X0_LVT)                                   0.03       0.20 f
+  U4414/Y (AO22X1_LVT)                                    0.05       0.25 f
+  U5041/Y (NAND2X0_LVT)                                   0.04       0.28 r
+  U5043/Y (AO22X1_LVT)                                    0.05       0.34 r
+  U5044/Y (AO22X1_LVT)                                    0.05       0.39 r
+  U4478/Y (OR2X1_LVT)                                     0.04       0.43 r
+  U5046/Y (AO22X1_LVT)                                    0.05       0.48 r
+  U5047/Y (AO22X1_LVT)                                    0.06       0.54 r
+  U5052/Y (AO22X1_LVT)                                    0.05       0.59 r
+  U5057/Y (AO22X1_LVT)                                    0.05       0.64 r
+  U5060/Y (AO22X1_LVT)                                    0.05       0.69 r
+  U4470/Y (INVX0_LVT)                                     0.03       0.73 f
+  U4340/Y (XOR3X1_LVT)                                    0.08       0.80 r
+  U5062/Y (NAND2X0_LVT)                                   0.04       0.84 f
+  U4362/Y (INVX1_LVT)                                     0.04       0.88 r
+  U5134/Y (NAND2X0_LVT)                                   0.03       0.91 f
+  U4403/Y (NAND2X0_LVT)                                   0.04       0.95 r
+  U4398/Y (NAND2X0_LVT)                                   0.03       0.98 f
+  U4370/Y (INVX0_LVT)                                     0.03       1.01 r
+  U4397/Y (NAND2X0_LVT)                                   0.03       1.04 f
+  U4407/Y (NAND2X0_LVT)                                   0.05       1.09 r
+  U4399/Y (XOR3X2_LVT)                                    0.06       1.15 f
+  U4364/Y (INVX1_LVT)                                     0.04       1.19 r
+  U4482/Y (AND2X2_LVT)                                    0.06       1.24 r
+  U4471/Y (AO21X1_LVT)                                    0.05       1.29 r
+  U5185/Y (NAND2X0_LVT)                                   0.03       1.32 f
+  U5187/Y (NAND2X0_LVT)                                   0.04       1.36 r
+  U4448/Y (AO22X1_LVT)                                    0.05       1.41 r
+  U5188/Y (AO22X1_LVT)                                    0.05       1.46 r
+  U4982/Y (OR2X1_LVT)                                     0.04       1.50 r
+  U4425/Y (AND2X1_LVT)                                    0.04       1.54 r
+  U4429/Y (AO21X1_LVT)                                    0.04       1.58 r
+  U4438/Y (AO21X1_LVT)                                    0.05       1.63 r
+  U4430/Y (AND2X1_LVT)                                    0.04       1.68 r
+  U4466/Y (NAND2X0_LVT)                                   0.03       1.70 f
+  U4465/Y (AND2X1_LVT)                                    0.05       1.75 f
+  U4483/Y (OA21X1_LVT)                                    0.05       1.80 f
+  U4447/Y (XOR3X2_LVT)                                    0.05       1.85 f
+  U4381/Y (OR2X1_LVT)                                     0.06       1.91 f
+  U4382/Y (INVX1_LVT)                                     0.04       1.95 r
+  U4967/Y (AO21X1_LVT)                                    0.05       1.99 r
+  U4980/Y (OA21X1_LVT)                                    0.05       2.05 r
+  U5214/Y (OA21X1_LVT)                                    0.04       2.09 r
+  U5219/Y (AO221X1_LVT)                                   0.05       2.14 r
+  U5226/Y (OA22X1_LVT)                                    0.05       2.19 r
+  U5230/Y (AO222X1_LVT)                                   0.07       2.26 r
+  U5231/Y (AO21X1_LVT)                                    0.05       2.31 r
+  imtr_drv/iPWM/PWM_sig_reg/D (DFFARX1_LVT)               0.01       2.32 r
+  data arrival time                                                  2.32
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  imtr_drv/iPWM/PWM_sig_reg/CLK (DFFARX1_LVT)             0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

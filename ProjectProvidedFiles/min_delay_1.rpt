@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : eBike
+Version: S-2021.06
+Date   : Tue May  3 22:13:34 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iA2D/spi/SCLK_div_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iA2D/spi/SCLK_div_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iA2D/spi/SCLK_div_reg[4]/CLK (DFFASX1_LVT)              0.00       0.00 r
+  iA2D/spi/SCLK_div_reg[4]/QN (DFFASX1_LVT)               0.06       0.06 f
+  U4900/Y (XOR2X1_LVT)                                    0.05       0.11 r
+  U4037/Y (NAND2X0_LVT)                                   0.02       0.13 f
+  iA2D/spi/SCLK_div_reg[4]/D (DFFASX1_LVT)                0.01       0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  iA2D/spi/SCLK_div_reg[4]/CLK (DFFASX1_LVT)              0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
