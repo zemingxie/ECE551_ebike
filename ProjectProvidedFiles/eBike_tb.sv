@@ -80,19 +80,19 @@ module eBike_tb();
 	change = 1'b0;
     @(posedge clk);
     @(negedge clk) RST_n = 1;
-	repeat(1) @(posedge clk);
-    @(posedge clk) tgglMd = 1;
-	@(posedge clk) tgglMd = 0;
-	repeat(3) @(posedge clk);
-	@(posedge clk) tgglMd = 1;
-	@(posedge clk) tgglMd = 0;
+	//repeat(1) @(posedge clk);
+    //@(posedge clk) tgglMd = 1;
+	//@(posedge clk) tgglMd = 0;
 	//repeat(3) @(posedge clk);
 	//@(posedge clk) tgglMd = 1;
 	//@(posedge clk) tgglMd = 0;
-    #42000000;
+	//repeat(3) @(posedge clk);
+	//@(posedge clk) tgglMd = 1;
+	//@(posedge clk) tgglMd = 0;
+    repeat(2000000) @(posedge clk);
 	change = 1'b1;
 	TORQUE = 12'h500;
-	#42000000;
+	repeat(2000000) @(posedge clk);
     $stop();
 	
   end
