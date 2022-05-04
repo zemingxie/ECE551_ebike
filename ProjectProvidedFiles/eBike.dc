@@ -1,0 +1,78 @@
+###################################
+# Read in the verilog files first #
+###################################
+read_file -format sverilog { ./UART_tx.sv ./telemetry.sv \
+./SPI_mnrch.sv ./cadence_filt.sv ./cadence_LU.sv ./cadence_meas.sv \
+./desiredDrive.sv ./inertial_integrator.sv ./PWM11.sv ./nonoverlap.sv \
+./PB_intf.sv ./inert_intf.sv ./mtr_drv.sv ./brushless.sv ./PID.sv \
+./sensorCondition.sv ./A2D_intf.sv ./reset_synch.sv ./eBike.sv }
+                            
+#########################################################
+# Set Current Design to top level and link the children #
+#########################################################
+set current_design eBike
+link
+
+##############################
+# Constrain and assign clock #
+##############################
+create_clock -name "clk" -period 2.5 -waveform {0 1.25} clk
+set_dont_touch_network [find port clk]
+set_dont_touch_network [get_net ireset/rst_n]
+
+###################################
+# Constrain input timings & Drive #
+###################################
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+set_input_delay -clock clk 0.3 $prim_inputs
+set_driving_cell -lib_cell NAND2X1_LVT -library saed32lvt_tt0p85v25c $prim_inputs
+#set_drive 0.1 rst_n
+
+##### Set drive on Bp to be stronger #####
+# set_drive 3 [find port Bp]
+
+###################################
+# Constrain output timing & loads #
+###################################
+set_output_delay -clock clk 0.5 [all_outputs]
+set_load 0.05 [all_outputs]
+
+##################################
+# Set wireload & transition time #
+##################################
+set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
+set_max_transition 0.20 [current_design]
+
+######################
+# Compile the design #
+######################
+compile -map_effort high
+
+#########################################
+# Set clock uncertainty and do fix hold #
+#########################################
+set_clock_uncertainty 0.15 clk
+set_fix_hold clk
+
+#####################
+# Flatten hierarchy #
+#####################
+ungroup -all -flatten
+
+###############
+# 2nd Compile #
+###############
+compile -map_effort high
+compile -map_effort high
+
+##################################
+# Generate timing & Area reports #
+##################################
+report_timing -delay max > max_delay.rpt
+report_timing -delay min > min_delay.rpt
+report_area > eBike_area.txt
+
+###########################################
+# Write out resulting synthesized netlist #
+###########################################
+write -format verilog eBike -output eBike.vg
