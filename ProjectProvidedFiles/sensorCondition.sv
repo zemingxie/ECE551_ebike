@@ -48,7 +48,7 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
   cadence_filt #(FAST_SIM) icadence_filt(.clk(clk), .rst_n(rst_n), .cadence(cadence_raw), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
   cadence_meas #(FAST_SIM) icadence_meas(.clk(clk), .rst_n(rst_n), .cadence_filt(cadence_filt), .cadence_per(cadence_per), .not_pedaling(not_pedaling));
   cadence_LU icadence_LU(.cadence_per(cadence_per), .cadence(cadence));
-  desiredDrive idesiredDrive(.clk(clk), .rst_n(rst_n), .avg_torque(avg_torque), .cadence(cadence), .not_pedaling(not_pedaling), .incline(incline), .scale(scale), .target_curr(target_curr));
+  desiredDrive idesiredDrive(.avg_torque(avg_torque), .cadence(cadence), .not_pedaling(not_pedaling), .incline(incline), .scale(scale), .target_curr(target_curr));
   telemetry itelemetry(.clk(clk), .rst_n(rst_n), .batt_v(batt), .avg_curr(avg_curr), .avg_torque(avg_torque), .TX(TX));
   
   always_ff @(posedge clk, negedge rst_n)								//store not_pedaling for edge detect
