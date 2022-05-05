@@ -11,7 +11,8 @@ module top();
   reg clk;
   
   eBike_bfm bfm(clk);
-
+  
+  testbench testbench_h;
 
   //////////////////////////////////////////////////
   // Declare any internal signal to interconnect //
@@ -65,16 +66,13 @@ module top();
   ////////////////////////////////////////////////////////////
   // Instantiate UART_rcv or some other telemetry monitor? //
   //////////////////////////////////////////////////////////
-  UART_rcv ircv(.clk(clk), .rst_n(RST_n), .RX(TX_RX), .rdy(vld_TX), .rx_data(rx_data), .clr_rdy(vld_TX));
+  UART_rcv ircv(.clk(clk), .rst_n(bfm.RST_n), .RX(TX_RX), .rdy(vld_TX), .rx_data(rx_data), .clr_rdy(vld_TX));
 			 
   initial begin
     clk = 0;
     cadence = 0;
-	bfm.give_value(12'h700, 16'h0000, 12'hb80, 12'hfff);
-    bfm.reset_eBike();
-    repeat(2100000) @(posedge clk);
-	bfm.give_value(12'h500, 16'h0000, 12'hb80, 12'hfff);
-	repeat(2100000) @(posedge clk);
+	testbench_h = new(bfm);
+	testbench_h.execute();
     $stop();
 	
   end

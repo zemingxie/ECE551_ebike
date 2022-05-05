@@ -13,6 +13,10 @@ interface eBike_bfm(input clk);
     @(posedge clk);
     @(negedge clk) RST_n = 1;
   endtask
+  
+  task wait_clk(input integer clks);
+    repeat(clks) @(posedge clk);
+  endtask
 
   task give_value(input [11:0] torque, input [15:0] yaw_rt, input [11:0] batt, input [11:0] brake);
     TORQUE = torque;
