@@ -30,7 +30,7 @@ module eBike_tb();
   logic vld_TX;
   logic TX_RX;
   logic [7:0] rx_data;
-  logic change;
+  integer cadence_rate;
   
   //////////////////////////////////////////////////
   // Instantiate model of analog input circuitry //
@@ -67,7 +67,10 @@ module eBike_tb();
   // Instantiate UART_rcv or some other telemetry monitor? //
   //////////////////////////////////////////////////////////
   UART_rcv ircv(.clk(clk), .rst_n(RST_n), .RX(TX_RX), .rdy(vld_TX), .rx_data(rx_data), .clr_rdy(vld_TX));
-			 
+  integer prev_omega;
+  integer prev_curr;
+  integer prev_duty;
+  integer prev_drvmag;
   initial begin
     clk = 0;
     RST_n = 0;
@@ -77,22 +80,72 @@ module eBike_tb();
     BATT = 12'hb80;
     BRAKE = 12'hfff;
     tgglMd = 1'b0;
-	change = 1'b0;
+	cadence_rate = 2200;
     @(posedge clk);
     @(negedge clk) RST_n = 1;
-	//repeat(1) @(posedge clk);
-    //@(posedge clk) tgglMd = 1;
-	//@(posedge clk) tgglMd = 0;
-	//repeat(3) @(posedge clk);
-	//@(posedge clk) tgglMd = 1;
-	//@(posedge clk) tgglMd = 0;
-	//repeat(3) @(posedge clk);
-	//@(posedge clk) tgglMd = 1;
-	//@(posedge clk) tgglMd = 0;
-    repeat(2000000) @(posedge clk);
-	change = 1'b1;
+	@(posedge clk);	
+	repeat(500000) @(posedge clk);
+	if(iDUT.error != iDUT.isensor.target_curr - iDUT.isensor.avg_curr) begin
+		$display("Error is incorrect");
+		$stop();
+	end
+	prev_omega = iPHYS.omega;
+	prev_curr = iDUT.isensor.target_curr;
+	repeat(500000) @(posedge clk);
+	if(iDUT.error != iDUT.isensor.target_curr - iDUT.isensor.avg_curr) begin
+		$display("Error is incorrect");
+		$stop();
+	end
+	if(prev_omega >= iPHYS.omega) begin
+		$display("Omega is falling when it should be rising");
+	end
+	if(prev_curr >= iDUT.isensor.target_curr) begin
+		$display("Current is falling when it should be rising");
+		$stop();
+	end
+	if(!(iDUT.iInert.incline == 13'h0000 || iDUT.iInert.incline == 13'h1fff)) begin
+		$display("Incline is changing unexpectedly");
+		$stop();
+	end
+	prev_duty = iDUT.ibrushless.duty;
+	prev_drvmag = iDUT.iPID.drv_mag;
+    	repeat(1100000) @(posedge clk);
+	cadence_rate = 8192;
 	TORQUE = 12'h500;
-	repeat(2000000) @(posedge clk);
+	repeat(500000) @(posedge clk);
+	if(iDUT.error != iDUT.isensor.target_curr - iDUT.isensor.avg_curr) begin
+		$display("Error is incorrect");
+		$stop();
+	end
+	prev_omega = iPHYS.omega;
+	prev_curr = iDUT.isensor.target_curr;
+	repeat(500000) @(posedge clk);	
+	if(iDUT.error != iDUT.isensor.target_curr - iDUT.isensor.avg_curr) begin
+		$display("Error is incorrect");
+		$stop();
+	end
+	if(prev_omega <= iPHYS.omega) begin
+		$display("Omega is rising when it should be falling");
+		$stop();
+	end
+	if(prev_curr <= iDUT.isensor.target_curr) begin
+		$display("Current is rising when it should be falling");
+		$stop();
+	end
+	if(!(iDUT.iInert.incline == 13'h0000 || iDUT.iInert.incline == 13'h1fff)) begin
+		$display("Incline is changing unexpectedly");
+		$stop();
+	end
+	if(iDUT.ibrushless.duty > prev_duty) begin
+		$display("duty cycle higher than expected");
+		$stop();
+	end
+	if(iDUT.iPID.drv_mag > prev_drvmag) begin
+		$display("motor drive higher than expected");
+		$stop();
+	end
+	repeat(1100000) @(posedge clk);
+
     $stop();
 	
   end
@@ -107,8 +160,7 @@ module eBike_tb();
   // Block for cadence signal generation? //
   /////////////////////////////////////////
   always begin
-    if(!change) repeat(2200) @(posedge clk); 
-	else repeat(8192) @(posedge clk); 
+    repeat(cadence_rate) @(posedge clk); 
 	cadence = ~cadence;		
   end
 	
