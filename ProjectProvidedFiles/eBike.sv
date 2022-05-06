@@ -4,7 +4,7 @@
 			 inertSS_n,inertSCLK,inertMOSI,inertMISO,
 			 inertINT,cadence,TX,tgglMd,LED);
 			 
-  parameter FAST_SIM = 1;		// accelerate simulation by default
+  parameter FAST_SIM = 0;		// accelerate simulation by default
 
   input clk;				// 50MHz clk
   input RST_n;				// active low RST_n from push button
@@ -56,7 +56,7 @@
   /////////////////////////////////////
   // Instantiate reset synchronizer //
   ///////////////////////////////////
-  reset_synch ireset(.*);
+  reset_synch ireset(.RST_n(RST_n),.clk(clk),.rst_n(rst_n));
   
   ///////////////////////////////////////////////////////
   // Instantiate A2D_intf to read torque & batt level //
@@ -92,6 +92,6 @@
   /////////////////////////////////////////////////////////////////
   // Instantiate PB_intf block to establish setting/LED & scale //
   ///////////////////////////////////////////////////////////////
-  PB_intf ipb(.*, .setting(LED));
+  PB_intf ipb(.clk(clk), .rst_n(rst_n), .tgglMd(~tgglMd), .scale(scale), .setting(LED));
 
 endmodule

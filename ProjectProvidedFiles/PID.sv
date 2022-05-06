@@ -15,6 +15,10 @@ module PID
   logic signed [17:0] sign_extend_error, integrator, integrator_in, adder;
   logic signed [12:0] d_flop1, d_flop2, prev_err, D_diff;
   logic signed [8:0] saturated_diff;
+  logic signed [17:0] negCheck;
+  logic signed [17:0] overflowCheck;
+  logic signed [17:0] decimatedSignal;
+  logic signed [17:0] pedalCheck;
   logic [19:0] decimator;
   logic decimator_full, pos_ov;
 
@@ -22,7 +26,11 @@ module PID
   assign I_term = integrator[16:5];                                              // I_term is the middle 12 bits of the integrator
   assign sign_extend_error = {{5{error[12]}}, error};                            // Sign extend error to match integrator
   assign adder = integrator + sign_extend_error;                                 // Integrating accumulator
+  assign negCheck = adder[17] ? 18'h00000 : adder;
   assign pos_ov = adder[17] & integrator[16];                                    // Positive overflow can only occur when MSB of adder and integrator[16] are 1
+  assign overflowCheck = pos_ov ? 18'h1FFFF : negCheck;
+  assign decimatedSignal = decimator_full ? overflowCheck : integrator;
+  assign pedalCheck = not_pedaling ? 18'h00000 : decimatedSignal;
   assign D_diff = error - prev_err;                                              // Derivative term
   assign saturated_diff = (D_diff[12] && !(&D_diff[11:8])) ? 9'h100:             // saturate derivertive to 9 bits
                           (!D_diff[12] && (|D_diff[11:8])) ? 9'h0ff:
@@ -45,12 +53,7 @@ module PID
   
   always_ff @(posedge clk, negedge rst_n)                                        // integrator logic
     if(!rst_n) integrator <= 18'h00000;                                          // asynch reset
-    else if(not_pedaling) integrator <= 18'h00000;                               // clear when not pedaling
-    else if(decimator_full) begin                                                // update at 1/48th of a second
-      if(pos_ov) integrator <= 18'h1ffff;                                        // saturate when overflow
-      else if(integrator[17]) integrator <= 18'h00000;                           
-      else integrator <= adder;                                                  // update value
-    end                                                                          // else, keep value (omit)
+    else integrator <= pedalCheck;                                                                     // else, keep value (omit)
 
   always_ff @(posedge clk, negedge rst_n)                                        // flops to obtain previous error values
     if(!rst_n) begin
